@@ -1,3 +1,45 @@
+function TooltipController($scope){
+
+  // Toggle the visibility of the tooltip dynamically
+  function togglePersist(){
+
+		var tooltipDiv = $scope.element.find('div');
+
+		if (tooltipDiv.hasClass('tooltip-active')){
+			tooltipDiv.toggleClass('active');
+		}
+
+	}
+
+  // Change the color of the tooltip dynamically
+	function changeColor(newValue, oldValue){
+
+		var tooltipDiv = $scope.element.find('div');
+
+		if (tooltipDiv.hasClass('tooltip-active')){
+			tooltipDiv.removeClass(oldValue);
+			tooltipDiv.addClass(newValue);
+		}
+
+	}
+
+  // Change the progress of the download bar dynamically
+  function changeProgress(newValue){
+
+    var progressDiv = $scope.element.find('div').find('div');
+
+    if (progressDiv.hasClass('progress-bar')){
+      progressDiv.css('width', newValue + '%');
+    }
+
+  }
+
+	$scope.togglePersist = togglePersist;
+	$scope.changeColor = changeColor;
+  $scope.changeProgress = changeProgress;
+
+}
+
 function Tooltip()
 {
   return {
@@ -6,7 +48,11 @@ function Tooltip()
       data: '=',
       options: '=',
     },
+    controller: TooltipController,
     link: function(scope, element, attrs){
+
+      // Reference to element for use in controller
+      scope.element = element;
 
       // Fail safe in case text is not given
       if (!scope.data){
@@ -24,7 +70,6 @@ function Tooltip()
         scope.data.text = tooltipHtml.html();
         tooltipHtml.remove();
       }
-
 
       // Determine class options
       var tooltipClass = 'tooltip-active';
@@ -54,6 +99,7 @@ function Tooltip()
         }
         else if (scope.options.type.toLowerCase() === 'download'){
           tooltipClass += ' download';
+          scope.data.text += '<div class="progress-bar"></div>';
         }
         else if (scope.options.type.toLowerCase() === 'alert'){
           tooltipClass += ' alert';
@@ -64,12 +110,15 @@ function Tooltip()
       // tooltipPosition handles the position of the whole tooltip,
       // above, below, right, or left of the element requiring a tooltip
       if(scope.options.position){
-        if(scope.options.position.toLowerCase() === 'left')
+        if(scope.options.position.toLowerCase() === 'left'){
           tooltipClass += ' tooltip-pos-left';
-        else if(scope.options.position.toLowerCase() === 'right')
+        }
+        else if(scope.options.position.toLowerCase() === 'right'){
           tooltipClass += ' tooltip-pos-right';
-        else if(scope.options.position.toLowerCase() === 'bottom')
+        }
+        else if(scope.options.position.toLowerCase() === 'bottom'){
           tooltipClass += ' tooltip-pos-bottom';
+        }
       }
 
       // Force tooltip to persist without hovering
@@ -83,6 +132,27 @@ function Tooltip()
 
       // Replace element's html with wrapped content
       element.html(replacementHTML);
+
+      // Watch the 'persist' option for changes
+      scope.$watch('options.persist', function(newValue, oldValue){
+        if (newValue != oldValue){
+          scope.togglePersist();
+        }
+      }, true);
+
+      // Watch the 'color' option for changes
+      scope.$watch('options.color', function(newValue, oldValue){
+        if (newValue != oldValue){
+          scope.changeColor(newValue, oldValue);
+        }
+      }, true);
+
+      // Watch the 'progress' option for changes
+      scope.$watch('options.progress', function(newValue, oldValue){
+        if (newValue != oldValue){
+          scope.changeProgress(newValue);
+        }
+      }, true);
 
     },
   };
@@ -98,6 +168,37 @@ app.controller('appCtrl', function($scope) {
 		type:"download",
 		transclude: true,
 		persist: true,
+		progress: 0,
 	};
+
+	$scope.directiveData1 = {text:tipText};
+	$scope.directiveOptions1 = {
+		color:"GREEN",
+		type:"download",
+		transclude: true,
+		persist: false,
+		progress: 0,
+	};
+
+	$scope.togglePersist = function(){
+		this.directiveOptions.persist = !this.directiveOptions.persist;
+	}
+	$scope.changeColor = function(){
+		if (this.directiveOptions.color.toLowerCase() === 'green')
+    {
+			this.directiveOptions.color = 'blue';
+		}
+		else if (this.directiveOptions.color.toLowerCase() === 'blue')
+    {
+			this.directiveOptions.color = 'green';
+		}
+	}
+	$scope.progressBar = function(){
+		for (i = 0; i < 100; i++){
+		this.directiveOptions.progress = i;
+
+		}
+	}
+
     });
 app.directive('bossyTooltip', Tooltip);
