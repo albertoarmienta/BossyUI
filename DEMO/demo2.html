@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<h1>BOSSYUI-GREEN PRESENT DEMO PAGE</h1>
+
+<html>
+
+
+
+<head>
+  <meta charset='UTF-8'>
+  <!--meta name="robots" content="noindex" -->
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>
+
+    <script type="text/javascript" src='/Users/ShirleyJin/Desktop/CSCI430/BossyUI/DEMO/bossy_tooltip_2.js'></script>
+      <script language="javascript" type="text/javascript">
+    $(function(){
+       alert("My javascript Test");
+    });
+    </script>
+
+
+  <link rel='stylesheet' href='/Users/ShirleyJin/Desktop/CSCI430/BossyUI/DEMO/tooltip.scss'>
+
+
+
+</head>
+
+
+
+<style>
+
+body {
+  margin: 20%;
+  font: 300 22px "Times New Rome", sans-serif;
+  color: #000;
+}
+</style>
+
+<body>
+
+
+
+  Input Text: <br/>
+
+  <textarea type="text" id="myText" autofocus="" rows="8" cols="50"></textarea>
+
+  <p>Click "Compile" to see the DEMO for tooltip</p>
+
+  <button onclick="myFunction()">Compile</button>
+
+  <h3>Output Demo:</h3>
+
+  <p id="demo"></p>
+
+
+
+  <script>
+  function myFunction() {
+      var x = document.getElementById("myText").value;
+      document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+
+
+  <br/>
+  <br/>
+  <br/>
+
+
+  <br/>
+  <br/>
+  <br/>
+
+  <div ng-app="myApp" ng-controller="appCtrl">
+  <!-- Start App -->
+  This is some<bossy-tooltip data="directiveData" options="directiveOptions">
+  test text.<div><img src="http://i.imgur.com/xIMYYf4.png" class="icon"> <span>Download this File <span>350kb</span></div></bossy-tooltip>
+
+<br>
+
+  <button ng-click="togglePersist()">Persist</button>
+  <button ng-click="changeColor()">Color</button>
+  <select ng-click ="changeColors">
+    <option value="#333333">blue</option>
+    <option value= '#408900'>green</option>
+    <option value="orange">orange</option>
+    <option value="red">red</option>
+  </select>
+  <button ng-click="progressBar()">Progress</button>
+
+<br>
+<br>
+
+
+  <div class="tooltip default-style">This is some <span class="link">heading text <div class="tooltip-active">This is some text within the tooltip</div></span></div>
+
+  <!-- End of App -->
+  </div>
+
+
+
+
+
+
+</body>
+
+
+
+</html>
