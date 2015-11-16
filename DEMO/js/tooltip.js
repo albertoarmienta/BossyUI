@@ -1,27 +1,28 @@
+
 function TooltipController($scope){
 
   // Toggle the visibility of the tooltip dynamically
   function togglePersist(){
 
-		var tooltipDiv = $scope.element.find('div');
+    var tooltipDiv = $scope.element.find('div');
 
-		if (tooltipDiv.hasClass('tooltip-active')){
-			tooltipDiv.toggleClass('active');
-		}
+    if (tooltipDiv.hasClass('tooltip-active')){
+      tooltipDiv.toggleClass('active');
+    }
 
-	}
+  }
 
   // Change the color of the tooltip dynamically
-	function changeColor(newValue, oldValue){
+  function changeColor(newValue, oldValue){
 
-		var tooltipDiv = $scope.element.find('div');
+    var tooltipDiv = $scope.element.find('div');
 
-		if (tooltipDiv.hasClass('tooltip-active')){
-			tooltipDiv.removeClass(oldValue);
-			tooltipDiv.addClass(newValue);
-		}
+    if (tooltipDiv.hasClass('tooltip-active')){
+      tooltipDiv.removeClass(oldValue);
+      tooltipDiv.addClass(newValue);
+    }
 
-	}
+  }
 
   // Change the progress of the download bar dynamically
   function changeProgress(newValue){
@@ -34,8 +35,8 @@ function TooltipController($scope){
 
   }
 
-	$scope.togglePersist = togglePersist;
-	$scope.changeColor = changeColor;
+  $scope.togglePersist = togglePersist;
+  $scope.changeColor = changeColor;
   $scope.changeProgress = changeProgress;
 
 }
@@ -127,7 +128,7 @@ function Tooltip()
       }
 
       // Wrap element html
-      var replacementHTML = '<span class="tooltip default-style" style="opacity:1;"><span class="link">' + element.html() +
+      var replacementHTML = '<span class="bossy-tooltip default-style";"><span class="link">' + element.html() +
         '<div class="' + tooltipClass + '" >' + scope.data.text + '</div></span></span>';
 
       // Replace element's html with wrapped content
@@ -160,45 +161,43 @@ function Tooltip()
 
 var app = angular.module('myApp', []);
 app.controller('appCtrl', function($scope) {
-	var tipText = '<img src="http://i.imgur.com/xIMYYf4.png" class="icon"> <span>This is some text within the tooltip - this is a lot more text inside the tooltip</span>';
+  var tipText = '<img src="http://i.imgur.com/xIMYYf4.png" class="icon"> <span>This is some text within the tooltip - this is a lot more text inside the tooltip</span>';
 
-    $scope.directiveData = {text:tipText};
-	$scope.directiveOptions = {
-		color:"GREEN",
-		type:"download",
-		transclude: true,
-		persist: true,
-		progress: 0,
-	};
+  $scope.directiveData = {text:tipText};
+  $scope.directiveOptions = {
+    color:"GREEN",
+    type:"download",
+    transclude: true,
+    persist: true,
+    progress: 0,
+  };
 
-	$scope.directiveData1 = {text:tipText};
-	$scope.directiveOptions1 = {
-		color:"GREEN",
-		type:"download",
-		transclude: true,
-		persist: false,
-		progress: 0,
-	};
+  $scope.directiveData1 = {text:tipText};
+  $scope.directiveOptions1 = {
+    color:"GREEN",
+    type:"download",
+    transclude: true,
+    persist: false,
+    progress: 0,
+  };
 
-	$scope.togglePersist = function(){
-		this.directiveOptions.persist = !this.directiveOptions.persist;
-	}
-	$scope.changeColor = function(){
-		if (this.directiveOptions.color.toLowerCase() === 'green')
-    {
-			this.directiveOptions.color = 'blue';
-		}
-		else if (this.directiveOptions.color.toLowerCase() === 'blue')
-    {
-			this.directiveOptions.color = 'green';
-		}
-	}
-	$scope.progressBar = function(){
-		for (i = 0; i < 100; i++){
-		this.directiveOptions.progress = i;
+  $scope.togglePersist = function(){
+    this.directiveOptions.persist = !this.directiveOptions.persist;
+  }
+  $scope.changeColor = function(){
+    if (this.directiveOptions.color.toLowerCase() === 'green'){
+      this.directiveOptions.color = 'blue';
+    }
+    else if (this.directiveOptions.color.toLowerCase() === 'blue'){
+      this.directiveOptions.color = 'green';
+    }
+  }
+  $scope.progressBar = function(){
+    for (i = 0; i < 100; i++){
+      this.directiveOptions.progress = i;
 
-		}
-	}
+    }
+  }
 
-    });
+});
 app.directive('bossyTooltip', Tooltip);

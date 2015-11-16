@@ -1,26 +1,8 @@
-body {
-  margin: 10%;
-  font: 200 18px "Helvetica Neue", sans-serif;
-  color: #666;
-}
-
-html,
-html a {
-  text-rendering: optimizeLegibilitiy;
-  -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
-}
-
 /* Colors */
 .green {
   background-color: #408900 !important;
 }
+
 .green:before {
   background-color: #408900 !important;
 }
@@ -28,6 +10,7 @@ html a {
 .blue {
   background-color: #0f88d4 !important;
 }
+
 .blue:before {
   background-color: #0f88d4 !important;
 }
@@ -35,6 +18,7 @@ html a {
 .orange {
   background-color: #ff9600 !important;
 }
+
 .orange:before {
   background-color: #ff9600 !important;
 }
@@ -42,6 +26,7 @@ html a {
 .red {
   background-color: #9e2712 !important;
 }
+
 .red:before {
   background-color: #9e2712 !important;
 }
@@ -49,26 +34,28 @@ html a {
 .orange {
   background-color: #ff9600 !important;
 }
+
 .orange:before {
   background-color: #ff9600 !important;
 }
 
 /* Tooltip */
-.tooltip + * {
+.bossy-tooltip + * {
   margin-top: 50px;
 }
-.tooltip span.link {
+
+.bossy-tooltip span.link {
   position: relative;
   color: #59a715;
   cursor: pointer;
 }
-.tooltip span.link:hover .tooltip-active {
+
+.bossy-tooltip span.link:hover .bossy-tooltip-active {
   opacity: 1;
-  -webkit-transform: scale(1) translateY(0);
-      -ms-transform: scale(1) translateY(0);
-          transform: scale(1) translateY(0);
+  transform: scale(1) translateY(0);
 }
-.tooltip .tooltip-active {
+
+.bossy-tooltip .bossy-tooltip-active {
   position: absolute;
   background-color: #333;
   width: 300px;
@@ -83,72 +70,81 @@ html a {
   color: #fff;
   cursor: default;
   opacity: 0;
-  -webkit-transform: scale(0) translateY(-20px);
-      -ms-transform: scale(0) translateY(-20px);
-          transform: scale(0) translateY(-20px);
-  -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+  transform: scale(0) translateY(-20px);
+  transition: all 0.3s ease-in-out;
   pointer-events: none;
 }
-.tooltip .tooltip-active.active {
+
+.bossy-tooltip .bossy-tooltip-active.active {
   opacity: 1;
-  -webkit-transform: scale(1) translateY(0);
-      -ms-transform: scale(1) translateY(0);
-          transform: scale(1) translateY(0);
+  transform: scale(1) translateY(0);
 }
-.tooltip .tooltip-active.tooltip-left {
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-left {
   left: 5%;
   margin: 0;
 }
-.tooltip .tooltip-active.tooltip-left:before {
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-left:before {
   left: 10%;
 }
-.tooltip .tooltip-active.tooltip-right {
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-right {
   right: 5%;
   left: auto;
   margin: 0;
 }
-.tooltip .tooltip-active.tooltip-right:before {
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-right:before {
   right: 10%;
   left: auto;
 }
-.tooltip .tooltip-active.wide {
+
+.bossy-tooltip .bossy-tooltip-active.wide {
   width: 420px;
 }
-.tooltip .tooltip-active.extra-padding {
+
+.bossy-tooltip .bossy-tooltip-active.extra-padding {
   padding: 20px;
 }
-.tooltip .tooltip-active.content-html img {
+
+.bossy-tooltip .bossy-tooltip-active.content-html img {
   max-width: 20%;
   float: left;
   display: inline-block;
 }
-.tooltip .tooltip-active.content-html span {
+
+.bossy-tooltip .bossy-tooltip-active.content-html span {
   width: 76%;
   float: right;
   text-align: left;
 }
-.tooltip .tooltip-active.content-html h3 {
+
+.bossy-tooltip .bossy-tooltip-active.content-html h3 {
   margin: 0 0 5px;
   font-size: 16x;
   color: #fff;
 }
-.tooltip .tooltip-active.alert .icon {
+
+.bossy-tooltip .bossy-tooltip-active.alert .icon {
   width: 10%;
   float: left;
   margin: 10px 0 0 10px;
   text-align: center;
 }
-.tooltip .tooltip-active.alert span {
+
+.bossy-tooltip .bossy-tooltip-active.alert span {
   width: 85%;
   padding-left: 10px;
   float: right;
   text-align: left;
 }
-.tooltip .tooltip-active.download {
+
+.bossy-tooltip .bossy-tooltip-active.download {
   padding: 10px;
 }
-.tooltip .tooltip-active.download .progress-bar {
+
+.bossy-tooltip .bossy-tooltip-active.download .progress-bar {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -157,7 +153,8 @@ html a {
   left: 0;
   z-index: -1;
 }
-.tooltip .tooltip-active.download .icon {
+
+.bossy-tooltip .bossy-tooltip-active.download .icon {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -168,7 +165,8 @@ html a {
   float: right;
   font-size: 25px;
 }
-.tooltip .tooltip-active.download .icon:before {
+
+.bossy-tooltip .bossy-tooltip-active.download .icon:before {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -176,19 +174,22 @@ html a {
   margin-top: -12.5px;
   text-align: center;
 }
-.tooltip .tooltip-active.download span {
+
+.bossy-tooltip .bossy-tooltip-active.download span {
   width: 90%;
   display: block;
   float: left;
   color: #fff;
   text-align: left;
 }
-.tooltip .tooltip-active.download span span {
+
+.bossy-tooltip .bossy-tooltip-active.download span span {
   display: block;
   font-size: 70%;
   font-weight: lighter;
 }
-.tooltip .tooltip-active:before {
+
+.bossy-tooltip .bossy-tooltip-active:before {
   position: absolute;
   background-color: #333;
   height: 15px;
@@ -199,7 +200,6 @@ html a {
   margin-left: -15px;
   display: block;
   content: "";
-  -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
+
