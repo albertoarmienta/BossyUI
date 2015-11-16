@@ -124,7 +124,7 @@ function Tooltip()
       }
 
     },
-    template: '<span class="tooltip default-style" style="opacity:1;">' +
+    template: '<span class="bossy-tooltip default-style">' +
       '<span class="link">' +
       '<span style="white-space: nowrap;">' +
       '<ng-transclude></ng-transclude>' +
