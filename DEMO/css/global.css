@@ -5,5 +5,10 @@ html{
 body{
     width:100%;
     height:100%;
-    background-color:#DDD;
+    background-image:url("http://www.pixeden.com/media/k2/galleries/165/003-subtle-light-pattern-background-texture-vol5.jpg");
+}
+
+.tooltip-styles{
+    text-align: center;
+	font-size: 30px;
 }

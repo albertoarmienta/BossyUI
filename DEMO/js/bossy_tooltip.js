@@ -143,21 +143,30 @@ var app = angular.module('myApp', ["bossy.filters"]);
 app.controller('appCtrl', function($scope) {
   $scope.directiveData = {text: "This is default text in the tooltip"};
   $scope.directiveOptions = {
-    color:"GREEN"
   };  
-  $scope.directiveAlertData = {text: "This is default text in the tooltip"};
-  $scope.directiveAlertOptions = {
-    color:"RED"
+  $scope.directiveData1 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions1 = {
+    align: "left"
   };  
-  $scope.directiveLeftData = {text: "This is default text in the tooltip"};
-  $scope.directiveLeftOptions = {
-    color:"RED",
-    align:"left"
+  $scope.directiveData2 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions2 = {
+    align:"right"
   };
-  $scope.directiveBelowData = {text: "This is default text in the tooltip"};
-  $scope.directiveBelowOptions = {
-    color:"BLUE",
-    position:"right"
+  $scope.directiveData3 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions3 = {
+    color:"green",
+  };
+  $scope.directiveData4 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions4 = {
+    color:"orange",
+  };
+  $scope.directiveData5 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions5 = {
+    color:"red",
+  };
+  $scope.directiveData6 = {text: "This is default text in the tooltip"};
+  $scope.directiveOptions6 = {
+    color:"blue",
   };
 });
 app.directive('bossyTooltip', Tooltip);

@@ -50,12 +50,12 @@
   cursor: pointer;
 }
 
-.bossy-tooltip span.link:hover .bossy-tooltip-active {
+.bossy-tooltip span.link:hover .tooltip-active {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
 
-.bossy-tooltip .bossy-tooltip-active {
+.bossy-tooltip .tooltip-active {
   position: absolute;
   background-color: #333;
   width: 300px;
@@ -75,76 +75,76 @@
   pointer-events: none;
 }
 
-.bossy-tooltip .bossy-tooltip-active.active {
+.bossy-tooltip .tooltip-active.active {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
 
-.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-left {
+.bossy-tooltip .tooltip-active.tooltip-left {
   left: 5%;
   margin: 0;
 }
 
-.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-left:before {
+.bossy-tooltip .tooltip-active.tooltip-left:before {
   left: 10%;
 }
 
-.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-right {
+.bossy-tooltip .tooltip-active.tooltip-right {
   right: 5%;
   left: auto;
   margin: 0;
 }
 
-.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-right:before {
+.bossy-tooltip .tooltip-active.tooltip-right:before {
   right: 10%;
   left: auto;
 }
 
-.bossy-tooltip .bossy-tooltip-active.wide {
+.bossy-tooltip .tooltip-active.wide {
   width: 420px;
 }
 
-.bossy-tooltip .bossy-tooltip-active.extra-padding {
+.bossy-tooltip .tooltip-active.extra-padding {
   padding: 20px;
 }
 
-.bossy-tooltip .bossy-tooltip-active.content-html img {
+.bossy-tooltip .tooltip-active.content-html img {
   max-width: 20%;
   float: left;
   display: inline-block;
 }
 
-.bossy-tooltip .bossy-tooltip-active.content-html span {
+.bossy-tooltip .tooltip-active.content-html span {
   width: 76%;
   float: right;
   text-align: left;
 }
 
-.bossy-tooltip .bossy-tooltip-active.content-html h3 {
+.bossy-tooltip .tooltip-active.content-html h3 {
   margin: 0 0 5px;
   font-size: 16x;
   color: #fff;
 }
 
-.bossy-tooltip .bossy-tooltip-active.alert .icon {
+.bossy-tooltip .tooltip-active.alert .icon {
   width: 10%;
   float: left;
   margin: 10px 0 0 10px;
   text-align: center;
 }
 
-.bossy-tooltip .bossy-tooltip-active.alert span {
+.bossy-tooltip .tooltip-active.alert span {
   width: 85%;
   padding-left: 10px;
   float: right;
   text-align: left;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download {
+.bossy-tooltip .tooltip-active.download {
   padding: 10px;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download .progress-bar {
+.bossy-tooltip .tooltip-active.download .progress-bar {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -154,7 +154,7 @@
   z-index: -1;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download .icon {
+.bossy-tooltip .tooltip-active.download .icon {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -166,7 +166,7 @@
   font-size: 25px;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download .icon:before {
+.bossy-tooltip .tooltip-active.download .icon:before {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -175,7 +175,7 @@
   text-align: center;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download span {
+.bossy-tooltip .tooltip-active.download span {
   width: 90%;
   display: block;
   float: left;
@@ -183,13 +183,13 @@
   text-align: left;
 }
 
-.bossy-tooltip .bossy-tooltip-active.download span span {
+.bossy-tooltip .tooltip-active.download span span {
   display: block;
   font-size: 70%;
   font-weight: lighter;
 }
 
-.bossy-tooltip .bossy-tooltip-active:before {
+.bossy-tooltip .tooltip-active:before {
   position: absolute;
   background-color: #333;
   height: 15px;
