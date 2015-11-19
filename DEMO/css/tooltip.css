@@ -48,14 +48,15 @@
   position: relative;
   color: #59a715;
   cursor: pointer;
+  white-space: nowrap;
 }
 
-.bossy-tooltip span.link:hover .tooltip-active {
+.bossy-tooltip span.link:hover .bossy-tooltip-active {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
 
-.bossy-tooltip .tooltip-active {
+.bossy-tooltip .bossy-tooltip-active {
   position: absolute;
   background-color: #333;
   width: 300px;
@@ -73,78 +74,134 @@
   transform: scale(0) translateY(-20px);
   transition: all 0.3s ease-in-out;
   pointer-events: none;
+  white-space: normal;
 }
 
-.bossy-tooltip .tooltip-active.active {
+.bossy-tooltip .bossy-tooltip-active.active {
   opacity: 1;
   transform: scale(1) translateY(0);
 }
 
-.bossy-tooltip .tooltip-active.tooltip-left {
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-align-left {
   left: 5%;
   margin: 0;
 }
 
-.bossy-tooltip .tooltip-active.tooltip-left:before {
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-align-left:before {
   left: 10%;
 }
 
-.bossy-tooltip .tooltip-active.tooltip-right {
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-align-right {
   right: 5%;
   left: auto;
   margin: 0;
 }
 
-.bossy-tooltip .tooltip-active.tooltip-right:before {
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-align-right:before {
   right: 10%;
   left: auto;
 }
 
-.bossy-tooltip .tooltip-active.wide {
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-left,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-right,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-left,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-right,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-left,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-right {
+  bottom: 0;
+  left: 0;
+  margin-left: 110%;
+  margin-bottom: -18px;
+}
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-left:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-right:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-left:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-right:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-left:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-right:before {
+  top: 50%;
+  left: 7px;
+  margin-top: -7px;
+}
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-left,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-left,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-left {
+  left: auto;
+  margin-left: 0;
+  right: 0;
+  margin-right: 110%;
+}
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-left:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-left:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-left:before {
+  right: -7px;
+  left: auto;
+  margin-left: -15px;
+}
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-bottom,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-bottom,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-bottom {
+  bottom: 0 !important;
+  margin-bottom: -65%;
+}
+
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-left.bossy-tooltip-pos-bottom:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-right.bossy-tooltip-pos-bottom:before,
+.bossy-tooltip .bossy-tooltip-active.bossy-tooltip-pos-bottom.bossy-tooltip-pos-bottom:before {
+  top: calc(-15px/2);
+  left: 50%;
+  margin-left: -15px;
+}
+
+.bossy-tooltip .bossy-tooltip-active.wide {
   width: 420px;
 }
 
-.bossy-tooltip .tooltip-active.extra-padding {
+.bossy-tooltip .bossy-tooltip-active.extra-padding {
   padding: 20px;
 }
 
-.bossy-tooltip .tooltip-active.content-html img {
+.bossy-tooltip .bossy-tooltip-active.content-html img {
   max-width: 20%;
   float: left;
   display: inline-block;
 }
 
-.bossy-tooltip .tooltip-active.content-html span {
+.bossy-tooltip .bossy-tooltip-active.content-html span {
   width: 76%;
   float: right;
   text-align: left;
 }
 
-.bossy-tooltip .tooltip-active.content-html h3 {
+.bossy-tooltip .bossy-tooltip-active.content-html h3 {
   margin: 0 0 5px;
   font-size: 16x;
   color: #fff;
 }
 
-.bossy-tooltip .tooltip-active.alert .icon {
+.bossy-tooltip .bossy-tooltip-active.alert .icon {
   width: 10%;
   float: left;
   margin: 10px 0 0 10px;
   text-align: center;
 }
 
-.bossy-tooltip .tooltip-active.alert span {
+.bossy-tooltip .bossy-tooltip-active.alert span {
   width: 85%;
   padding-left: 10px;
   float: right;
   text-align: left;
 }
 
-.bossy-tooltip .tooltip-active.download {
+.bossy-tooltip .bossy-tooltip-active.download {
   padding: 10px;
 }
 
-.bossy-tooltip .tooltip-active.download .progress-bar {
+.bossy-tooltip .bossy-tooltip-active.download .progress-bar {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -154,7 +211,7 @@
   z-index: -1;
 }
 
-.bossy-tooltip .tooltip-active.download .icon {
+.bossy-tooltip .bossy-tooltip-active.download .icon {
   position: absolute;
   background-color: #294c0a;
   height: 100%;
@@ -166,7 +223,7 @@
   font-size: 25px;
 }
 
-.bossy-tooltip .tooltip-active.download .icon:before {
+.bossy-tooltip .bossy-tooltip-active.download .icon:before {
   position: absolute;
   width: 100%;
   top: 50%;
@@ -175,27 +232,27 @@
   text-align: center;
 }
 
-.bossy-tooltip .tooltip-active.download span {
+.bossy-tooltip .bossy-tooltip-active.download span {
   width: 90%;
   display: block;
   float: left;
   color: #fff;
   text-align: left;
+  line-height: 16px;
 }
 
-.bossy-tooltip .tooltip-active.download span span {
+.bossy-tooltip .bossy-tooltip-active.download span span {
   display: block;
   font-size: 70%;
   font-weight: lighter;
 }
 
-.bossy-tooltip .tooltip-active:before {
+.bossy-tooltip .bossy-tooltip-active:before {
   position: absolute;
   background-color: #333;
   height: 15px;
   width: 15px;
   top: calc(100% - 10px);
-  bottom: calc(45px/2);
   left: 50%;
   margin-left: -15px;
   display: block;
@@ -203,3 +260,19 @@
   transform: rotate(45deg);
 }
 
+.bossy-tooltip .bossy-tooltip-active .icon {
+  font-size: 30px;
+}
+
+.bossy-tooltip .bossy-tooltip-active .icon.icon-left {
+  float: left;
+}
+
+.bossy-tooltip .bossy-tooltip-active .icon.icon-right {
+  float: right;
+}
+
+.bossy-tooltip .bossy-tooltip-active .icon.icon-right + span {
+  margin-left: 0;
+  padding-left: 0;
+}
