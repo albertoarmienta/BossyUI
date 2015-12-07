@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for directives/bossy.combobox.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">directives/</a> bossy.combobox.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.08% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">23.08% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/13</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="fstat-no" title="function not covered" >function ComboboxController($scope){</span>
+<span class="cstat-no" title="statement not covered" >	$scope.list = $scope.config.list;</span>
+<span class="cstat-no" title="statement not covered" >	$scope.selectedItems = [];</span>
+&nbsp;
+	// Remove item from the list of selected items and place it back in the dropbox
+<span class="cstat-no" title="statement not covered" >	$scope.deleteSelection = <span class="fstat-no" title="function not covered" >function(item) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var index = $scope.selectedItems.indexOf(item);</span>
+<span class="cstat-no" title="statement not covered" >		$scope.selectedItems.splice(index, 1);</span>
+	};
+&nbsp;
+	// Add selected item to selection list and remove it from the dropdown box
+<span class="cstat-no" title="statement not covered" >	$scope.addSelection = <span class="fstat-no" title="function not covered" >function(item) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if ($scope.selectedItems.indexOf(item) == -1) {</span>
+<span class="cstat-no" title="statement not covered" >			$scope.selectedItems.push(item);</span>
+		}
+	};
+}
+<span class="fstat-no" title="function not covered" >function Combobox(){</span>
+<span class="cstat-no" title="statement not covered" >	var template = '' +</span>
+		'&lt;div class="combo-box" ng-class="{\'open\': inFocus}" ng-blur="inFocus = false"&gt;' +
+			'&lt;label for="combo-input" class="input-label"&gt;Profession&lt;/label&gt;' +
+			'&lt;input id="combo-input" type="text" placeholder="- Select -" ng-focus="inFocus = true"&gt;' +
+			'&lt;div class="inputs"&gt;' +
+				'&lt;label class="pill" ng-repeat="item in selectedItems"&gt;{{item}}&lt;span class="close" ng-click="deleteSelection(item)"&gt;&amp;times;&lt;/span&gt;&lt;/label&gt;' +
+			'&lt;/div&gt;' +
+&nbsp;
+			'&lt;div class="lists" ng-class="{\'is-active\': inFocus}"&gt;' +
+				'&lt;ul&gt;' +
+					'&lt;li class="title"&gt;Awesome Jobs&lt;/li&gt;' +
+					'&lt;li ng-repeat="item in list"&gt;&lt;a href="#!" title="{{item}}" ng-click="addSelection(item)"&gt;{{item}}&lt;/a&gt;&lt;/li&gt;' +
+				'&lt;/ul&gt;' +
+			'&lt;/div&gt;' +
+		'&lt;/div&gt;';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	return {</span>
+		restrict: 'AE',
+		scope: {
+			config: '='
+		},
+		template: template,
+		controller: ComboboxController
+	};
+}
+&nbsp;
+angular.module('bossy.combobox',[])
+	.directive('bossyCombobox', Combobox);</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Dec 07 2015 15:24:22 GMT-0800 (PST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
